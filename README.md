@@ -2,7 +2,14 @@
 
 A Python script that keeps your Sonarr library clean by syncing Season monitoring status with Episode status.
 
-It checks every series in your library. If it finds a Season where **every single episode** is unmonitored, it automatically updates the **Season itself** to be "Unmonitored". This helps keep the "Wanted" and "Cutoff Unmet" lists clean by removing seasons you clearly don't intend to download.
+### The Problem (Jellyseerr / Overseerr)
+If you delete or unmonitor episodes in Sonarr, the **Season itself** often remains marked as "Monitored".
+When this happens, **Jellyseerr** (and Overseerr) assumes you still "Own" or are monitoring that content, causing the **Request Button to be greyed out** or unavailable.
+
+### The Solution
+This script scans your library. If it finds a Season where **every single episode** is unmonitored, it automatically updates the **Season itself** to be "Unmonitored".
+*   **Jellyseerr:** The "Request" button becomes available again for that season.
+*   **Sonarr:** Fixes the visual bookmark icons and prevents future/TBA episodes in ignored seasons from appearing in your "Wanted" list.
 
 ## Prerequisites
 *   Python 3.x
