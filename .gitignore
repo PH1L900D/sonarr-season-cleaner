@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local settings / Environment files
+.env
+config.ini
+
+# Logs
+*.log
